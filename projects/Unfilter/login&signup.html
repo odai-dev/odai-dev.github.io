@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Unfilter</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <a href="index.html" class="active">
+                    <img src="logo.png" alt="logo" height="80" width="50">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-link">
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="how-it-works.html">How it works</a>
+                </li>
+                <li>
+                    <a href="demo.html">Demo</a>
+                </li>
+
+                <li>
+                    <a href="login&signup.html"><i class="fa-solid fa-circle-user" style="font-size: 2rem;"></i></a>
+                </li>
+            </ul>
+            <div class="hamburger">&#9776;</div>
+        </nav>
+    </header>
+
+    <div class="forms-container">
+
+        <form class="signup-form form" name="myForm" onsubmit="return validateForm()" action="">
+            <legend><b>Sign Up</b></legend>
+            <div class="input-container">
+                <div class="input-control">
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <div class="feedback"></div>
+                </div>
+                <div class="input-control">
+                    <label for="user-name">User Name</label>
+                    <input type="text" id="user-name" name="user-name">
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email">
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                    <div class="feedback"></div>
+                </div>
+
+            </div>
+            <p>What platforms do you use filters on?</p>
+            <div class="checkbox-section">
+                <input type="checkbox" id="select-all" name="select-all">
+                <label for="select-all">Select All </label>
+                <input type="checkbox" class="platform" id="instagram" name="instagram">
+                <label for="instagram">Instagram</label>
+                <input type="checkbox" class="platform" id="Snapchat" name="Snapchat">
+                <label for="Snapchat">Snapchat</label>
+                <input type="checkbox" class="platform" id="TikTok" name="TikTok">
+                <label for="Tiktok">Tiktok</label>
+                <input type="checkbox" class="platform" id="VSCO" name="VSCO">
+                <label for="VSCO">VSCO</label>
+                <input type="checkbox" class="platform" id="Other" name="Other">
+                <label for="Other">Other</label>
+            </div>
+            <button type="submit" class="button" id="signup-btn">Sign Up</button>
+            <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+        </form>
+
+        <form class="login-form form" name="myForm" onsubmit="return validateLoginForm()" action="">
+            <legend><b>Login</b></legend>
+            <div class="input-container">
+
+                <div class="input-control">
+                    <label for="email">Email</label>
+                    <input type="text" id="login-email" name="email">
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="login-password" name="password">
+                    <div class="feedback"></div>
+                </div>
+            </div>
+
+            <button type="submit" class="button" id="login-btn">Login</button>
+            <p>Don't have an account? <a href="#" id="signup-link">Signup</a></p>
+        </form>
+    </div>
+
+
+
+
+    <footer class="footer login-page">
+        <div class="footer-content">
+            <p>Made with ❤️ by <a href="#">Odai</a></p>
+        </div>
+    </footer>
+
+    <script src="javascript.js"></script>
+
+</body>
+
+</html>

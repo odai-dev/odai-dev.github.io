@@ -1,0 +1,388 @@
+:root {
+  --primary-color: rgb(67, 122, 189);
+  --secondary-color: rgb(100, 183, 168);
+  --background-color: #FFFFFF;
+
+  --text-color: #222B38;                      /* Main text: dark blue-gray */
+  --nav-link-color: #355C7D;                  /* Nav links: deep blue */
+  --nav-link-hover: #43A6DD;                  /* Nav hover: lighter blue */
+  --card-bg: #E0F0F3;                         /* Card background: very light blue */
+  --shadow-color: rgba(67, 122, 189, 0.08);   /* Subtle blue shadow */
+
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  text-align: center;
+  font-family: var(--font-main);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  font-size: small;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url(Gemini_Generated_Image_noawrbnoawrbnoaw.jpg);
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  display: inline-block;
+  font-weight: 500;
+  transition: 0.3 all ease-in-out;
+}
+a:hover {
+  border-bottom: 1px solid var(--nav-link-hover) ;
+  color: var(--nav-link-hover);
+}
+
+
+.navbar {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* background-color: var(--background-color); */
+  color: var(--text-color);
+  position: relative;
+  z-index: 1;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.nav-links a:hover {
+  color: var(--nav-link-hover);
+}
+.hamburger{
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.hamburger.active {
+  color: var(--primary-color);
+}
+
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(120deg, rgba(67,122,189,0.2), rgba(100,183,168,0.2));
+  overflow: hidden;
+}
+
+.hero h1{
+  font-size: 3rem;
+  color: var(--primary-color);
+  /* background-color: var(--card-bg); */
+  /* text-shadow: 0px 0px 5px var(--card-bg);
+  box-shadow: 0 0 5px var(--card-bg); */
+  border: none;
+  border-radius: 0px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+.btn:hover {
+  background-color: var(--primary-color);
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(67,122,189,0.15);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+  z-index: 0;
+}
+.btn:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+.features {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+.features h2 {
+  color: var(--primary-color);
+}
+.features-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  box-shadow: 5px 5px 1px var(--primary-color) ;
+  border: 1px solid var(--primary-color) ;
+  transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+  box-shadow: 0 2px 12px var(--shadow-color);
+}
+.card:hover  {
+  transform: scale(1.05) ;
+  box-shadow: 0 8px 24px var(--primary-color);
+  z-index: 2;
+}
+.card h3 {
+  color: var(--secondary-color);
+}
+.card:hover h3 {
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+
+footer  {
+
+  position: relative;
+  background-color: var(--card-bg);
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  /* This makes main take up all available space */
+ 
+}
+.forms-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ .form {
+  width: 60%;
+  max-width: 350px;
+  background-color: #ffffff;
+  margin: auto;
+  text-align: left;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  box-shadow: 5px 5px 1px var(--primary-color) ;
+}
+.form legend {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.input-container {
+  margin-top: 10px;
+}
+.input-control {
+  display: flex;
+  flex-direction: column;
+}
+.input-container input {
+  padding:10px;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: var(--nav-link-color);
+  max-height: 20px;
+  border: 1px solid var(--text-color);
+
+}
+.input-container label {
+  margin-top: 0.5rem;
+}
+.checkbox-section {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+
+}
+.button {
+  margin-top: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  height: 2.5rem;
+  font-size: large;
+  font-weight: 500;
+  background-color:var(--secondary-color);
+  border: 1px solid var(--text-color);
+  color: var(--background-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: var(--primary-color);
+}
+.feedback {
+  color: red;
+}
+
+.input-control input.fail {
+  border: 1px solid red;
+  box-shadow: 0 0 5px red;
+}
+.input-control input.success {
+  border: 1px solid green;
+  box-shadow: 0 0 5px green;
+}
+
+
+.signup-form {
+  display: none;
+}
+.login-form {
+  display: block;
+}
+
+/* Animated section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Loader for demo */
+.demo-loader {
+  display: none;
+  margin: 1rem auto;
+  border: 4px solid var(--secondary-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+
+  .hero h1{
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    position: absolute;
+    top: 89%;
+    right: 0;
+    background-color: var(--background-color);
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+    padding: 1rem 2rem;
+    display: none;
+    transition: right 0.4s cubic-bezier(.77,0,.18,1), opacity 0.4s;
+    right: -100vw;
+    opacity: 0;
+  }
+  .nav-links.active {
+    display:flex;
+    right: 0;
+    opacity: 1;
+    box-shadow: -2px 0 12px var(--shadow-color);
+  }
+  .hamburger {
+    display: block;
+  }
+  .features {
+    margin-top: 5rem;
+  }
+  .features-list {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .card {
+    width: 70%;
+    margin-right: auto ;
+    margin-left: auto;
+  }
+  .footer {
+    height: 10vh;
+    top: 5rem;
+  }
+}

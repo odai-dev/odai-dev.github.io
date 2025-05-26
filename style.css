@@ -112,6 +112,7 @@ a:hover {
 .btn-secondary:hover {
     background-color: #4B5563;
     transform: translateY(-2px);
+    color: var(--color-text-primary);
 }
 
 /* Cards */
@@ -133,6 +134,11 @@ img {
     height: auto;
     display: block;
     border-radius: var(--border-radius-md);
+    
+}
+.project-card img {
+    width: fit-content !important;
+    margin: auto;
 }
 
 /* Forms */
@@ -292,13 +298,13 @@ textarea {
 .skill-item i { font-size: 2.5rem; margin-bottom: 0.5rem; } /* Slightly smaller icon and margin */
 .skill-item span { font-size: 0.9rem; font-weight: 500; color: var(--color-white); } /* Slightly smaller text */
 /* Specific skill icon colors */
+
 .fa-html5 { color: #E44D26; }
 .fa-css3-alt { color: #1572B6; }
 .fa-js-square { color: #F0DB4F; }
 .fa-python { color: #4B8BBE; }
 /* For Flask, Django, Bootstrap, C, C++, C#, Java, DSA - using generic or related icons */
 .fa-flask { color: #000000; } /* Flask doesn't have a direct FA icon, using black as placeholder */
-.fa-django { color: #092E20; } /* Django doesn't have a direct FA icon, using its green */
 .fa-bootstrap { color: #7952B3; }
 .fa-git-alt { color: #F1502F; }
 .fa-github { color: #181717; }
@@ -309,7 +315,7 @@ textarea {
 .fa-brain { color: #87CEEB; } /* Generic for DSA (Data Structures & Algorithms) */
 .fa-code { color: #A465EF; } /* Generic code icon if specific one isn't available or suitable */
 
-
+*/
 /* Projects Section */
 #projects { padding: 5rem 0; }
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
@@ -334,23 +340,20 @@ textarea {
 .site-footer { padding: 2rem 0; background-color: var(--color-bg-dark); text-align: center; color: var(--color-text-secondary); font-size: 0.9rem; }
 .site-footer .fa-heart { color: #e74c3c; }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) { /* md breakpoint */
+@media (max-width: 768px) {
     h1 { font-size: 2.25rem; }
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content .subtitle { font-size: 1.1rem; }
 
     .main-nav {
-        position: fixed; /* Changed from absolute for better control */
-        top: 0; /* Align to top */
+        position: absolute; 
+        top: 0; 
         left: 0;
         right: 0;
-        bottom: 0; /* Full height */
-        background-color: var(--color-bg-medium);
-        padding-top: 5rem; /* Space for header/close button */
+        bottom: 0;
+        padding-top: 5rem; 
         transform: translateX(100%); /* Start off-screen */
         z-index: 1050; /* Below hamburger, above content */
-        overflow-y: auto; /* Allow scrolling if menu is long */
     }
     .main-nav.menu-open { /* Class added by JS */
         transform: translateX(0%);
@@ -358,17 +361,18 @@ textarea {
     .main-nav ul {
         flex-direction: column;
         width: 100%;
-        align-items: center; /* Center menu items */
-        z-index: 1000;
+        align-items: center; 
+
     }
     .main-nav li {
         margin-left: 0;
         width: 100%;
         text-align: center;
+        background-color: var(--color-bg-medium);
     }
     .main-nav a {
         display: block;
-        padding: 1rem; /* Larger tap targets */
+        padding: 1rem; 
         border-bottom: 1px solid var(--color-bg-light);
         width: 100%;
     }
@@ -396,4 +400,4 @@ textarea {
     .projects-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+/* .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; } */

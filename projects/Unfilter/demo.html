@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>Unfilter Demo</title>
+</head>
+<body>
+    <!-- ...existing code (navbar/header, same as index.html)... -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="active">
+                    <img src="logo.png" alt="logo" height="80" width="50">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li><a href="how-it-works.html">How it works</a></li>
+                <li><a href="demo.html">Demo</a></li>
+           
+                <li><a href="login&signup.html"><i class="fa-solid fa-circle-user" style="font-size: 2rem;"></i></a></li>
+            </ul>
+            <div class="hamburger">&#9776;</div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" style="height: 60vh; min-height: 400px;">
+            <div class="hero-content">
+                <h1>Try the Unfilter Demo</h1>
+                <p>See the difference between filtered and real images. Upload your own or try our sample!</p>
+            </div>
+        </section>
+        <section class="demo-section" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="demo-container" style="background: var(--card-bg); border-radius: 10px; box-shadow: 0 2px 8px var(--shadow-color); padding: 2rem; max-width: 600px; width: 100%;">
+                <label for="image-upload" style="font-weight: 500;">Upload an image:</label>
+                <input type="file" id="image-upload" accept="image/*" style="margin: 1rem 0;">
+                <div id="demo-images" style="display: flex; gap: 2rem; justify-content: center; align-items: center; margin-top: 1rem;">
+                    <div>
+                        <h3>Filtered</h3>
+                        <img id="filtered-img" src="Gemini_Generated_Image_9d78ss9d78ss9d78.jpg" alt="Filtered" style="max-width: 250px; border-radius: 8px; box-shadow: 2px 2px 8px #aaa;">
+                    </div>
+                    <div>
+                        <h3>Unfiltered</h3>
+                        <img id="unfiltered-img" src="Gemini_Generated_Image_noawrbnoawrbnoaw.jpg" alt="Unfiltered" style="max-width: 250px; border-radius: 8px; box-shadow: 2px 2px 8px #aaa;">
+                    </div>
+                </div>
+                <button class="btn" style="margin-top: 2rem;" onclick="window.location.href='login&signup.html'">Get Started</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="main-footer">
+        <div class="footer-content">
+            <p>Made with ❤️ by <a href="#">Odai</a></p>
+        </div>
+    </footer>
+    <script src="javascript.js"></script>
+    <script>
+    // Demo image upload logic
+    const imageUpload = document.getElementById('image-upload');
+    const filteredImg = document.getElementById('filtered-img');
+    const unfilteredImg = document.getElementById('unfiltered-img');
+    imageUpload?.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                filteredImg.src = ev.target.result;
+                unfilteredImg.src = ev.target.result;
+                //  apply a CSS filter to the 'filtered' image for effect
+                filteredImg.style.filter = 'contrast(1.2) saturate(1.5) blur(1px)';
+                unfilteredImg.style.filter = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+    </script>
+</body>
+</html>
