@@ -359,6 +359,7 @@ textarea {
         flex-direction: column;
         width: 100%;
         align-items: center; /* Center menu items */
+        z-index: 1000;
     }
     .main-nav li {
         margin-left: 0;
