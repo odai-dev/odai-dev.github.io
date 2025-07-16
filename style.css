@@ -418,15 +418,13 @@ textarea {
     margin-bottom: 0.5rem;
 }
 
-/* Slightly smaller icon and margin */
 .skill-item span {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-white);
 }
 
-/* Slightly smaller text */
-/* Specific skill icon colors */
+
 
 .fa-html5 {
     color: #E44D26;
@@ -444,7 +442,6 @@ textarea {
     color: #4B8BBE;
 }
 
-/* For Flask, Django, Bootstrap, C, C++, C#, Java, DSA - using generic or related icons */
 .fa-flask {
     color: #000000;
 }
@@ -458,10 +455,7 @@ textarea {
     color: #F1502F;
 }
 
-.fa-github {
-    color: #181717;
-}
-
+/* Custom display for C */
 .fa-c {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -469,7 +463,7 @@ textarea {
     color: #A8B9CC;
 }
 
-/* Custom display for C */
+/* Custom display for C++ */
 .fa-cpp {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -477,7 +471,7 @@ textarea {
     color: #00599C;
 }
 
-/* Custom display for C++ */
+/* Custom display for C# */
 .fa-csharp {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -485,24 +479,18 @@ textarea {
     color: #68217A;
 }
 
-/* Custom display for C# */
-.fa-java {
-    color: #f89820;
-}
 
-/* Oracle Java Orange */
+/* Generic for DSA (Data Structures & Algorithms) */
 .fa-brain {
     color: #87CEEB;
 }
 
-/* Generic for DSA (Data Structures & Algorithms) */
+/* Generic code icon if specific one isn't available or suitable */
 .fa-code {
     color: #A465EF;
 }
 
-/* Generic code icon if specific one isn't available or suitable */
 
-*/
 
 /* Projects Section */
 #projects {
